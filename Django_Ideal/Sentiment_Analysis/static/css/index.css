@@ -1,0 +1,215 @@
+/****** IGNORE ******/
+* {
+  box-sizing        : border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing   : border-box;
+}
+
+body {
+  margin          : 0;
+  padding         : 0;
+  background-color: #ffffff;
+}
+
+.copyright {
+  display:block;
+  margin-top: 100px;
+  text-align: center;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.copyright a{
+  text-decoration: none;
+  color: #EE4E44;
+}
+
+
+/****** CODE ******/
+
+.file-upload{display:block;text-align:center;font-family: Helvetica, Arial, sans-serif;font-size: 12px;}
+.file-upload .file-select{display:block;border: 2px solid #dce4ec;color: #34495e;cursor:pointer;height:40px;line-height:40px;text-align:left;background:#FFFFFF;overflow:hidden;position:relative;}
+.file-upload .file-select .file-select-button{background:#dce4ec;padding:0 10px;display:inline-block;height:40px;line-height:40px;}
+.file-upload .file-select .file-select-name{line-height:40px;display:inline-block;padding:0 10px;}
+.file-upload .file-select:hover{border-color:#34495e;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.file-upload .file-select:hover .file-select-button{background:#34495e;color:#FFFFFF;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.file-upload.active .file-select{border-color:#3fa46a;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.file-upload.active .file-select .file-select-button{background:#3fa46a;color:#FFFFFF;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.file-upload .file-select input[type=file]{z-index:100;cursor:pointer;position:absolute;height:100%;width:100%;top:0;left:0;opacity:0;filter:alpha(opacity=0);}
+.file-upload .file-select.file-select-disabled{opacity:0.65;}
+.file-upload .file-select.file-select-disabled:hover{cursor:default;display:block;border: 2px solid #dce4ec;color: #34495e;cursor:pointer;height:40px;line-height:40px;margin-top:5px;text-align:left;background:#FFFFFF;overflow:hidden;position:relative;}
+.file-upload .file-select.file-select-disabled:hover .file-select-button{background:#dce4ec;color:#666666;padding:0 10px;display:inline-block;height:40px;line-height:40px;}
+.file-upload .file-select.file-select-disabled:hover .file-select-name{line-height:40px;display:inline-block;padding:0 10px;}
+
+.container{
+  max-width: 1280px;
+}
+
+.container .header_part{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.container .header_part .logo{
+  margin: 20px 0px;
+}
+
+.container .header_part .logo img{
+  width: 220px;
+  text-align: center;
+}
+
+.container .header_part .form-inline a.logout{
+  margin-left: 10px;
+}
+
+.container .filter_part{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+} 
+
+.container .filter_part .date_filter{
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+
+.container .filter_part .date_filter span,label{
+  margin: 0px 10px 0px 0px;
+}
+
+.container .data_table table thead tr th{
+  width: 25%;
+}
+
+/* ------------------------------
+--------analysis html page -----------
+--------------------------------- */
+.container .analysis_header_part .form-inline a.dashboard{
+  margin: 0px 10px 0px 0px;
+}
+.container .content .file-upload .button-area{
+  margin-top: 20px;
+}
+.container .content .file-upload .button-area a {
+  margin: 0px 0px 0px 10px;
+}
+
+/* ------------------------------
+--------analysis html page end -----------
+--------------------------------- */
+
+/* ------------------------------------ media query for max-width : 1280px ------------------------------------ */
+@media (max-width:1280px) {
+  .container{
+    max-width: 1000px;
+  }
+
+
+  .container .filter_part .date_filter input{
+    width: 50%;
+  }
+}
+/* ------------------------------------ media query for max-width : 1080px ------------------------------------ */
+@media (max-width:1080px) {
+  .container{
+    max-width: 920px;
+  }
+  
+  .container .header_part .logo img {
+    width: 180px;
+  }
+
+  /* ------------------------------
+--------analysis html page -----------
+--------------------------------- */
+  .container .analysis_header_part .form-inline a.logout, a {
+    margin-top: 0px;
+  }
+/* ------------------------------
+--------analysis html page end -----------
+--------------------------------- */
+}
+
+/* ------------------------------------ media query for max-width : 992px ------------------------------------ */
+@media (max-width:992px) {
+  .container{
+    max-width: 700px;
+  }
+
+  .container .filter_part .date_filter {
+    width: 70%;
+  }
+
+  .container .filter_part .dropdown{
+    width: 30%;
+  }
+
+  .container .filter_part .search_bar{
+    width: 30%;
+  }
+
+  .container .filter_part .search_bar input{
+    width: 55%;
+  }
+
+}
+
+/* ------------------------------------ media query for max-width : 767px ------------------------------------ */
+@media (max-width:767px) {
+  .container{
+    max-width: 400px;
+  }
+
+  .container .header_part .form-inline {
+    justify-content: flex-end;
+  }
+
+  .container .header_part .form-inline a.logout{
+    margin-top: 10px;
+  }
+
+  .container .filter_part{
+    flex-direction: column;
+  }
+
+  .container .filter_part .date_filter {
+    width: 100%;
+  }
+
+  .container .filter_part .search_bar {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .container .filter_part .dropdown {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  /* ------------------------------
+--------analysis html page -----------
+--------------------------------- */
+  .content {
+    max-width: 90%;
+  }
+/* ------------------------------
+--------analysis html page end -----------
+--------------------------------- */
+}
+
+/* ------------------------------------ media query for max-width : 479px ------------------------------------ */
+@media (max-width:479px) {
+  .container{
+    max-width: 100%;
+  }
+
+  .container .filter_part .date_filter input {
+    width: 47%;
+  }
+}

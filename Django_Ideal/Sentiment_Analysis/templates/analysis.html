@@ -1,0 +1,450 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSV Data Analysis</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <style>
+
+        .table-wrapper {
+            overflow: auto;
+            max-width: 100%;
+            background: linear-gradient(to right, white 30%, rgba(255, 255, 255, 0)),
+            linear-gradient(to right, rgba(255, 255, 255, 0), white 70%) 0 100%,
+            radial-gradient(farthest-side at 0% 50%, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)),
+            radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)) 0 100%;
+            background-repeat: no-repeat;
+            background-color: white;
+            background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
+            background-position: 0 0, 100%, 0 0, 100%;
+            background-attachment: local, local, scroll, scroll;
+        }
+
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        }
+
+        tr {
+            border: 1px solid black;
+            border-bottom: 1px solid;
+        }
+
+        th {
+            border: 1px solid black;
+            background-color: #555;
+            color: #fff;
+            white-space: nowrap;
+            text-align: left;
+            padding: 0.5em 1em;
+        }
+
+        .sentence {
+            min-width: 500px !important;
+            word-wrap: break-word;
+        }
+
+        td {
+            border: 1px solid black;
+            text-align: left;
+            padding: 0.5em 1em;
+            max-width: 200px;
+            word-wrap: break-word;
+        }
+
+
+        /****** IGNORE ******/
+
+        .content {
+            max-width: 70%;
+            margin: 100px auto;
+        }
+
+        .copyright {
+            display: block;
+            margin-top: 100px;
+            text-align: center;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .copyright a {
+            text-decoration: none;
+            color: #EE4E44;
+        }
+
+
+        /****** CODE ******/
+
+        .file-upload {
+            display: block;
+            text-align: center;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 12px;
+        }
+
+        .file-upload .file-select {
+            display: block;
+            border: 2px solid #dce4ec;
+            color: #34495e;
+            cursor: pointer;
+            height: 40px;
+            line-height: 40px;
+            text-align: left;
+            background: #FFFFFF;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .file-upload .file-select .file-select-button {
+            background: #dce4ec;
+            padding: 0 10px;
+            display: inline-block;
+            height: 40px;
+            line-height: 40px;
+        }
+
+        .file-upload .file-select .file-select-name {
+            line-height: 40px;
+            display: inline-block;
+            padding: 0 10px;
+        }
+
+        .file-upload .file-select:hover {
+            border-color: #34495e;
+            transition: all .2s ease-in-out;
+            -moz-transition: all .2s ease-in-out;
+            -webkit-transition: all .2s ease-in-out;
+            -o-transition: all .2s ease-in-out;
+        }
+
+        .file-upload .file-select:hover .file-select-button {
+            background: #34495e;
+            color: #FFFFFF;
+            transition: all .2s ease-in-out;
+            -moz-transition: all .2s ease-in-out;
+            -webkit-transition: all .2s ease-in-out;
+            -o-transition: all .2s ease-in-out;
+        }
+
+        .file-upload.active .file-select {
+            border-color: #3fa46a;
+            transition: all .2s ease-in-out;
+            -moz-transition: all .2s ease-in-out;
+            -webkit-transition: all .2s ease-in-out;
+            -o-transition: all .2s ease-in-out;
+        }
+
+        .file-upload.active .file-select .file-select-button {
+            background: #3fa46a;
+            color: #FFFFFF;
+            transition: all .2s ease-in-out;
+            -moz-transition: all .2s ease-in-out;
+            -webkit-transition: all .2s ease-in-out;
+            -o-transition: all .2s ease-in-out;
+        }
+
+        .file-upload .file-select input[type=file] {
+            z-index: 100;
+            cursor: pointer;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            filter: alpha(opacity=0);
+        }
+
+        .file-upload .file-select.file-select-disabled {
+            opacity: 0.65;
+        }
+
+        .file-upload .file-select.file-select-disabled:hover {
+            cursor: default;
+            display: block;
+            border: 2px solid #dce4ec;
+            color: #34495e;
+            cursor: pointer;
+            height: 40px;
+            line-height: 40px;
+            margin-top: 5px;
+            text-align: left;
+            background: #FFFFFF;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .file-upload .file-select.file-select-disabled:hover .file-select-button {
+            background: #dce4ec;
+            color: #666666;
+            padding: 0 10px;
+            display: inline-block;
+            height: 40px;
+            line-height: 40px;
+        }
+
+        .file-upload .file-select.file-select-disabled:hover .file-select-name {
+            line-height: 40px;
+            display: inline-block;
+            padding: 0 10px;
+        }
+        .fixed_loader{
+            position: fixed;
+            background: rgba(0,0,0,0.6);
+            top: 0px;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 101;
+            align-items: center;
+            justify-content: center;
+            display: none;
+        }
+        #loader {
+            width: 5rem;
+            height: 5rem;
+            border: 5px solid #f3f3f3;
+            border-top: 6px solid #4d41f2;
+            border-radius: 100%;
+            margin: auto;
+            visibility: hidden;
+            animation: spin 1s infinite linear;
+        }
+
+        #loader.display {
+            visibility: visible;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+    </style>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+<div class="container">
+    <div class="header_part analysis_header_part">
+        <div class="logo">
+            <img src="{% static 'images/trademonday_vertical_500x500_white_3.png' %}" alt="trademonday_vertical_logo">
+        </div>
+
+        <div class="form-inline">
+            <a href="../" class="dashboard">
+                <button type="button" class="btn btn-primary" id="dashboard">Dashboard</button>
+            </a>
+            <a href="{% url 'Sentiment:logout' %}" class="logout">
+                <button type="button" class="btn btn-primary">Logout</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="content">
+        <form action="" id="form" method="post" enctype="multipart/form-data">
+            <div class="file-upload">
+                <div class="file-select">
+                    <div class="file-select-button" id="fileName">Select CSV</div>
+                    <p class="file-select-name" id="noFile">No file chosen...</p>
+                    <input type="file" name="file" id="chooseFile">
+                </div>
+                <div class="button-area">
+                    <button type="button" class="btn btn-primary" id="submit" disabled>Submit</button>
+                    <a id="downloadCSV" href="">
+                        <button type="button" class="btn btn-primary" id="download-csv" disabled>Download CSV</button>
+                    </a>
+
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="fixed_loader" id="fixed_lader">
+        <div id="loader">
+
+        </div>
+    </div>
+    <div class="table-wrapper" tabindex="0">
+        <table id="filterTable">
+        </table>
+    </div>
+
+    <div id="domMessage" style="display:none;">
+        <h3 id="progress">Please wait while processing your csv...</h3>
+    </div>
+</div>
+<!--<input type="button" value="Generate a table." onclick="generate_table()">-->
+
+</body>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.js"></script>
+
+<script>
+    $('#chooseFile').bind('change', function () {
+        var filename = $("#chooseFile").val();
+        if (/^\s*$/.test(filename)) {
+            $("#download-csv").attr("disabled", true);
+            $("#downloadCSV").attr("href", "");
+            $(".file-upload").removeClass('active');
+            $("#noFile").text("No file chosen...");
+        } else {
+            $("#download-csv").attr("disabled", true);
+            $("#downloadCSV").attr("href", "");
+            $("#submit").attr("disabled", false);
+            $(".file-upload").addClass('active');
+            $("#noFile").text(filename.replace("C:\\fakepath\\", ""));
+        }
+    });
+
+
+</script>
+
+<script>
+    $(document).ready(function () {
+        const loader = document.querySelector("#loader");
+        $(document).on("click", "#submit", function () {
+            {#$.blockUI({message: $('#domMessage')});#}
+            document.getElementById("fixed_lader").style.display = "flex";
+            loader.classList.add("display");
+            $("#download-csv").attr("disabled", true);
+            // document.getElementById("loader").style.display = "block";
+            var base_url = window.location.origin;
+            var formData = new FormData();
+            formData.append("csrfmiddlewaretoken", '{{ csrf_token }}');
+            formData.append("file", $("#chooseFile")[0].files[0]);
+            var index_of_text =
+                $.ajax({
+                    url: "analyze/",
+                    type: "POST",
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function (result) {
+                        {#console.log(result)#}
+                        if ("msg" in result) {
+                            {#$.unblockUI();#}
+                            document.getElementById("fixed_lader").style.display = "none"
+                            loader.classList.remove("display");
+                            alert(result["msg"]);
+                        } else {
+                            {#$.unblockUI();#}
+                            document.getElementById("fixed_lader").style.display = "none"
+                            loader.classList.remove("display");
+                            // console.log(status_data.meta);
+                            $("#downloadCSV").attr("href", "/media/document_analyzed/" + result["context"]["name"])
+                            $("#download-csv").attr("disabled", false);
+                            // console.log(status_data.meta.loaded_data)
+                            {#$("#progress").text("Please wait while processing your csv...");#}
+                            generate_table(result["context"]["loaded_data"])
+                            /*
+                            var csv_id = result["csv_id"];
+                            var pollDelay = 500; // in ms
+                            var monitorProgress = function () {
+                                $.getJSON('/get_percentage/' + csv_id, function (status_data) {
+
+                            {#console.log(status_data)#}
+                                    if (status_data.state === 'SUCCESS') {
+                                        // this.setState({inProgress: false, message: ""});
+                                        $("#progress").text("100 % Completed");
+                                        $.unblockUI();
+                                        // console.log(status_data.meta);
+                                        $("#downloadCSV").attr("href", "/media/document_analyzed/" + status_data.meta.name)
+                                        $("#download-csv").attr("disabled", false);
+                                        // console.log(status_data.meta.loaded_data)
+                                         $("#progress").text("Please wait while processing your csv...");
+                                        generate_table(status_data.meta.loaded_data)
+                                        {#$.unblockUI();#}
+                                        {#window.location.href = 'report_view/' + reportId + '/html';#}
+                                    } else if(status_data.state === "FAILURE"){
+                                        $.unblockUI();
+                                        alert(status_data.meta.error);
+                                    } else {
+                                        $("#progress").text(status_data.meta.process_percentage + " % " + status_data.meta.task);
+                                        setTimeout(monitorProgress, pollDelay);
+                                    }
+                                });
+                            };
+                            setTimeout(monitorProgress, pollDelay);
+                            */
+                        }
+
+                    }
+                })
+        })
+    });
+
+    function generate_table(dict) {
+        dict = JSON.parse(dict)
+        console.log(typeof (dict))
+        console.log(dict['Adjective'])
+        keys = Object.keys(dict)
+        rows = dict[keys[0]]
+        rows = Object.keys(rows)
+        // get the reference for the body
+        var body = document.getElementsByTagName("body")[0];
+        // var div_tag = document.createElement("div");
+        // div_tag.setAttribute("class", "table-wrapper");
+        // body.appendChild(div_tag);
+
+        // creates a <table> element and a <tbody> element
+        // var tbl = document.createElement('table');
+        //   div_tag.setAttribute("id", "filterTable");
+
+        var tblBody = document.createElement("tbody");
+
+        // creating header files
+        var row = document.createElement("tr");
+
+        for (var i = 0; i < keys.length; i++) {
+            var cell = document.createElement("th");
+            var cellText = document.createTextNode(keys[i]);
+            cell.appendChild(cellText);
+            row.appendChild(cell);
+        }
+        tblBody.appendChild(row);
+
+        // creating all cells
+        for (var i = 0; i < rows.length; i++) {
+            // creates a table row
+            var row = document.createElement("tr");
+
+            for (var j = 0; j < keys.length; j++) {
+                // Create a <td> element and a text node, make the text
+                // node the contents of the <td>, and put the <td> at
+                // the end of the table row
+                var cell = document.createElement("td");
+                var cellText = document.createTextNode(dict[keys[j]][rows[i]]);
+                if (j == 0) {
+                    cell.setAttribute("class", "sentence");
+                }
+                cell.appendChild(cellText);
+                row.appendChild(cell);
+            }
+            // add the row to the end of the table body
+            tblBody.appendChild(row);
+        }
+        // put the <tbody> in the <table>
+        $("#filterTable").html(tblBody);
+        // appends <table> into <body>
+//  body.appendChild(tbl);
+        // sets the border attribute of tbl to 2;
+//  tbl.setAttribute("border", "2");
+        // var div_tag=document.createElement("div");
+        //   body.appendChild(div_tag);
+    }
+</script>
+</html>
