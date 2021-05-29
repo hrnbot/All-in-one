@@ -4,7 +4,7 @@ systemd.
 
 ## Create a New Service
 ```shell
-$ sudo nano /etc/systemd/system/
+$ sudo nano /etc/systemd/system/service_name.service
 ```
 ```shell
 [Unit]
