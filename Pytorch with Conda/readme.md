@@ -66,7 +66,7 @@ conda install pytorch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 cudatoolkit=11
 # CPU Only
 conda install pytorch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 cpuonly -c pytorch
 
-#Alternative
+# Alternative
 
 # CUDA 11.0
 pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
@@ -102,7 +102,7 @@ conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=11
 # CPU Only
 conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cpuonly -c pytorch
 
-#Alternative 
+# Alternative 
 
 # CUDA 11.0
 pip install torch==1.7.0+cu110 torchvision==0.8.0+cu110 torchaudio==0.7.0 -f https://download.pytorch.org/whl/torch_stable.html
@@ -134,7 +134,7 @@ conda install pytorch==1.6.0 torchvision==0.7.0 cudatoolkit=10.2 -c pytorch
 # CPU Only
 conda install pytorch==1.6.0 torchvision==0.7.0 cpuonly -c pytorch
 
-#Alternative
+# Alternative
 
 # CUDA 10.2
 pip install torch==1.6.0 torchvision==0.7.0
@@ -149,7 +149,7 @@ pip install torch==1.6.0+cu92 torchvision==0.7.0+cu92 -f https://download.pytorc
 pip install torch==1.6.0+cpu torchvision==0.7.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
 ```
 
-###Pytorch v1.5.1
+### Pytorch v1.5.1
 ```shell
 # CUDA 9.2
 conda install pytorch==1.5.1 torchvision==0.6.1 cudatoolkit=9.2 -c pytorch
@@ -163,7 +163,7 @@ conda install pytorch==1.5.1 torchvision==0.6.1 cudatoolkit=10.2 -c pytorch
 # CPU Only
 conda install pytorch==1.5.1 torchvision==0.6.1 cpuonly -c pytorch
 
-#Alternative
+# Alternative
 
 # CUDA 10.2
 pip install torch==1.5.1 torchvision==0.6.1
@@ -178,7 +178,7 @@ pip install torch==1.5.1+cu92 torchvision==0.6.1+cu92 -f https://download.pytorc
 pip install torch==1.5.1+cpu torchvision==0.6.1+cpu -f https://download.pytorch.org/whl/torch_stable.html
 ```
 
-###Pytorch v1.5.0
+### Pytorch v1.5.0
 ```shell
 # CUDA 9.2
 conda install pytorch==1.5.0 torchvision==0.6.0 cudatoolkit=9.2 -c pytorch
@@ -192,7 +192,7 @@ conda install pytorch==1.5.0 torchvision==0.6.0 cudatoolkit=10.2 -c pytorch
 # CPU Only
 conda install pytorch==1.5.0 torchvision==0.6.0 cpuonly -c pytorch
 
-#Alternative
+# Alternative
 
 # CUDA 10.2
 pip install torch==1.5.0 torchvision==0.6.0
@@ -207,7 +207,7 @@ pip install torch==1.5.0+cu92 torchvision==0.6.0+cu92 -f https://download.pytorc
 pip install torch==1.5.0+cpu torchvision==0.6.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
 ```
 
-###Pytorch v1.4.0
+### Pytorch v1.4.0
 ```shell
 # CUDA 9.2
 conda install pytorch==1.4.0 torchvision==0.5.0 cudatoolkit=9.2 -c pytorch
@@ -218,7 +218,7 @@ conda install pytorch==1.4.0 torchvision==0.5.0 cudatoolkit=10.1 -c pytorch
 # CPU Only
 conda install pytorch==1.4.0 torchvision==0.5.0 cpuonly -c pytorch
 
-#Alternative
+# Alternative
 
 # CUDA 10.1
 pip install torch==1.4.0 torchvision==0.5.0
@@ -230,7 +230,7 @@ pip install torch==1.4.0+cu92 torchvision==0.5.0+cu92 -f https://download.pytorc
 pip install torch==1.4.0+cpu torchvision==0.5.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
 ```
 
-###Pytorch v1.2.0
+### Pytorch v1.2.0
 ```shell
 # CUDA 9.2
 conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=9.2 -c pytorch
@@ -241,7 +241,7 @@ conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch
 # CPU Only
 conda install pytorch==1.2.0 torchvision==0.4.0 cpuonly -c pytorch
 
-#Alternative
+# Alternative
 
 # CUDA 10.0
 pip install torch==1.2.0 torchvision==0.4.0
@@ -253,7 +253,7 @@ pip install torch==1.2.0+cu92 torchvision==0.4.0+cu92 -f https://download.pytorc
 pip install torch==1.2.0+cpu torchvision==0.4.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
 ```
 
-###Pytorch v1.1.0
+### Pytorch v1.1.0
 ```shell
 # CUDA 9.0
 conda install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=9.0 -c pytorch
@@ -264,7 +264,7 @@ conda install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=10.0 -c pytorch
 # CPU Only
 conda install pytorch-cpu==1.1.0 torchvision-cpu==0.3.0 cpuonly -c pytorch
 
-#Alternative
+# Alternative
 # CUDA 10.0
 Download and install wheel from https://download.pytorch.org/whl/cu100/torch_stable.html
 
@@ -275,7 +275,7 @@ Download and install wheel from https://download.pytorch.org/whl/cu90/torch_stab
 Download and install wheel from https://download.pytorch.org/whl/cpu/torch_stable.html
 ```
 
-#Pytorch v1.0.1
+# Pytorch v1.0.1
 ```shell
 # CUDA 9.0
 conda install pytorch==1.0.1 torchvision==0.2.2 cudatoolkit=9.0 -c pytorch
@@ -286,7 +286,7 @@ conda install pytorch==1.0.1 torchvision==0.2.2 cudatoolkit=10.0 -c pytorch
 # CPU Only
 conda install pytorch-cpu==1.0.1 torchvision-cpu==0.2.2 cpuonly -c pytorch
 
-#Alternative
+# Alternative
 
 # CUDA 10.0
 Download and install wheel from https://download.pytorch.org/whl/cu100/torch_stable.html
@@ -298,7 +298,7 @@ Download and install wheel from https://download.pytorch.org/whl/cu90/torch_stab
 Download and install wheel from https://download.pytorch.org/whl/cpu/torch_stable.html
 ```
 
-###Pytorch v1.0.0
+### Pytorch v1.0.0
 ```shell
 # CUDA 10.0
 conda install pytorch==1.0.0 torchvision==0.2.1 cuda100 -c pytorch
@@ -312,7 +312,7 @@ conda install pytorch==1.0.0 torchvision==0.2.1 cuda80 -c pytorch
 # CPU Only
 conda install pytorch-cpu==1.0.0 torchvision-cpu==0.2.1 cpuonly -c pytorch
 
-#Alternative
+# Alternative
 
 # CUDA 10.0
 Download and install wheel from https://download.pytorch.org/whl/cu100/torch_stable.html
@@ -328,7 +328,7 @@ Download and install wheel from https://download.pytorch.org/whl/cpu/torch_stabl
 
 ```
 
-###Pytorch v0.4.1
+### Pytorch v0.4.1
 ```shell
 # CUDA 9.0
 conda install pytorch=0.4.1 cuda90 -c pytorch
