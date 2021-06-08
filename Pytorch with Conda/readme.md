@@ -345,3 +345,12 @@ conda install pytorch=0.4.1 cuda75 -c pytorch
 # CPU only
 conda install pytorch=0.4.1 -c pytorch
 ```
+
+## Add Download is taking more time add in mirror
+
+```
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --set show_channel_urls yes
+```
