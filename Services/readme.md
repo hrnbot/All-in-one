@@ -22,6 +22,21 @@ ExecStart=/home/ubuntu/anaconda3/envs/env_name/bin/python manage.py runserver 0.
 WantedBy=multi-user.target
 ```
 
+## Start Service
+```bash
+sudo systemctl start myproject
+sudo systemctl enable myproject
+```
+## Stop Service
+```bash
+sudo systemctl stop myproject
+```
+
+## Status Service
+```bash
+sudo systemctl status myproject
+```
+
 # Detail Explanation
 
 ## [Unit] Section Directives
