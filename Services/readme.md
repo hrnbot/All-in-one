@@ -24,17 +24,17 @@ WantedBy=multi-user.target
 
 ## Start Service
 ```bash
-sudo systemctl start myproject
-sudo systemctl enable myproject
+sudo systemctl start service_name
+sudo systemctl enable service_name
 ```
 ## Stop Service
 ```bash
-sudo systemctl stop myproject
+sudo systemctl stop service_name
 ```
 
 ## Status Service
 ```bash
-sudo systemctl status myproject
+sudo systemctl status service_name
 ```
 
 # Detail Explanation
