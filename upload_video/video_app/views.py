@@ -31,7 +31,7 @@ def uploading(request):
 - Distroy the file
 '''
 
-
+# to get frames from video
 def video_frame(request):
     # Read the video from specified path
     # cam = cv2.VideoCapture("C:\\Users\\Admin\\PycharmProjects\\project_1\\openCV.mp4")
