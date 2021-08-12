@@ -5,7 +5,7 @@ from . import views
 
 app_name = "video_app"
 urlpatterns = [
-    path("upload/", views.uploading),
+    path("upload/", views.uploading, name="upload"),
     path("", views.index),
-    path("video_frame/", views.video_frame),
+    # path("video_frame/", views.video_frame),
 ]
