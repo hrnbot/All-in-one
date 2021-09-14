@@ -22,7 +22,7 @@ $ conda install cudatoolkit=11.0 cudnn=8.0
 
 ```shell
 $ pip install tensorflow==2.1-2.3
-$ conda install cudatoolkit=10.1 cudnn=7.6.5
+$ conda install cudatoolkit=10.2 cudnn=7.6.5
 ```
 
 ### Tensorflow 2.0 python 3.3-3.7
