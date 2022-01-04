@@ -15,7 +15,7 @@ SECRET_KEY = 'z*aja@0ek$g9pg0ek+9onixh!u9t3*q-z@z^9xfycy_b@obsaa'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -45,7 +45,7 @@ ROOT_URLCONF = 'upload_video.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [r'E:\Pycharm_project\video_project\upload_video\template'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
