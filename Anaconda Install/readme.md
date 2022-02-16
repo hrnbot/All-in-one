@@ -10,3 +10,24 @@ $ bash ~/Anaconda3-2021.05-Linux-x86_64.sh
 $ source ~/.bashrc
 ```
 
+## Anaconda sh-1
+```shell
+#!/bin/bash
+conda activate env_name
+```
+
+### Execution 
+```bash -i file_name.sh```
+
+## Anaconda sh-2
+```shell
+eval $(conda shell.bash hook)
+source /home/param/anaconda3/bin/activate env_name
+echo "end"
+```
+
+### Execution 
+```source file_name.sh```
+
+
+
