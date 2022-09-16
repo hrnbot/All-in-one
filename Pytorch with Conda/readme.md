@@ -2,18 +2,18 @@
 
 [GPU Guide Link](https://pytorch.org/)
 
-## Pytorch 
-### Pytorch Latest
+## Pytorch
+### Pytorch 1.12
 
 ```shell
 # CUDA 10.2
-conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
+conda install pytorch==1.12.1 torchvision torchaudio cudatoolkit=10.2 -c pytorch
 
-# CUDA 11.1
-conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c conda-forge
+# CUDA 11.6
+conda install pytorch==1.12.1 torchvision torchaudio cudatoolkit=11.6 -c pytorch -c conda-forge
 
 # CPU only
-conda install pytorch torchvision torchaudio cpuonly -c pytorch
+conda install pytorch=1.12.1 torchvision torchaudio cpuonly -c pytorch
 ```
 
 ### Pytorch v1.8.0
